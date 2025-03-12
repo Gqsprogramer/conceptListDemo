@@ -22,10 +22,10 @@
          <!-- 右侧是关于模型相关属性的详细介绍，支持修改与重新提交 -->
         <div class="mainBox">
           <div class="leftConceptListBox">
-          <conceptListBox/>
+            <conceptListBox/>
           </div>
           <div class="rightConceptdetailBox">
-          
+            <router-view/>
           </div>
         </div>
       </div>
@@ -63,7 +63,9 @@ const selectedKeys = ref(['1']);
 }
 
 .leftConceptListBox {
+  height: 560px;
   margin: 0 10px;
+  overflow-y: auto;
   width: 250px;
   border: #141414 solid 1px;
 }

@@ -7,6 +7,10 @@
   </template>
   <script setup>
   import { ref } from 'vue';
+  import { useRouter } from 'vue-router'
+
+  const router = useRouter()
+
 
   let items = ref([
         {
@@ -121,10 +125,28 @@
             },
           ],
         },
+        {
+          key: '6',
+          href: '#概念4',
+          title: 'API',
+          children: [
+            {
+              key: '7',
+              href: '#小概念11',
+              title: 'Anchor Props',
+            },
+            {
+              key: '8',
+              href: '#小概念12',
+              title: 'Link Props',
+            },
+          ],
+        },
       ]);
     //   herf是主要的链接，title是显示的文字，herf是唯一标识符，children是子节点，可以嵌套。
     // 点击某个节点，会触发change事件，可以获取到当前节点的key和href。
   const onChange = link => {
     console.log('Anchor:OnChange', link);
+    router.push({path:link})
   };
   </script>
